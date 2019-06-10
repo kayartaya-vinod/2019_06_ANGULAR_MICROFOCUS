@@ -1,0 +1,34 @@
+<h3>The names are: </h3>
+
+<ul>
+  <li *ngFor="let name of names">{{ name }}</li>
+</ul>
+
+<div *ngIf="!people || people.length === 0">
+  <h3 class="text-danger">You have deleted everybody!</h3>
+</div>
+
+<div *ngIf="people && people.length !== 0">
+  <h3>The people are: </h3>
+  <!-- table>(thead>tr>th*4)+(tbody>tr>td*4) -->
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Age</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of people; index as n;">
+        <td>{{ p.gender==='Male' ? 'Mr.': 'Ms.'}} {{ p.name }}</td>
+        <td>{{ p.city }}</td>
+        <td>{{ p.age }} years</td>
+        <td>
+          <button class="btn btn-danger" (click)="deletePerson(n)">x</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
