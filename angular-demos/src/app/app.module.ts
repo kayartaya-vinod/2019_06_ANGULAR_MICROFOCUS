@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ClickCounterComponent } from './components/click-counter/click-counter.component';
 import { DirectivesDemoComponent } from './components/directives-demo/directives-demo.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { DirectivesDemoComponent } from './components/directives-demo/directives
     HeaderComponent,
     FooterComponent,
     ClickCounterComponent,
-    DirectivesDemoComponent
+    DirectivesDemoComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule

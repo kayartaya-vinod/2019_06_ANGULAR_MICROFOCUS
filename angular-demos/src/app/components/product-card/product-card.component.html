@@ -1,0 +1,10 @@
+<div class="card" style="width: 300px">
+
+  <img [src]="product.picture" [alt]="product.name" class="card-img-top">
+
+  <div class="card-body">
+    <h5 class="card-title">{{ product.description }}</h5>
+    <p>{{ product.quantity_per_unit}}</p>
+    <p [innerHTML]="product.unit_price"></p>
+  </div>
+</div>
