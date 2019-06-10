@@ -1,4 +1,4 @@
-# Angular training @ MicroFocus, Bangalore
+# Angular 7 - MicroFocus, Bangalore
 
 Duration: 4 days
 
