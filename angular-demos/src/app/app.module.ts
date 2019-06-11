@@ -10,6 +10,7 @@ import { DirectivesDemoComponent } from './components/directives-demo/directives
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { DiscountedPricePipe } from './pipes/discounted-price.pipe';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DiscountedPricePipe } from './pipes/discounted-price.pipe';
     DirectivesDemoComponent,
     ProductCardComponent,
     ProductListComponent,
-    DiscountedPricePipe
+    DiscountedPricePipe,
+    SidebarComponent
   ],
   imports: [
     BrowserModule, HttpClientModule

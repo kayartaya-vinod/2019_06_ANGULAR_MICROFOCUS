@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { Product } from '../models/product';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/products/';
+const baseUrl = 'http://localhost:3000/';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,16 @@ export class ProductsService {
         _limit: pageSize.toString()
       }
     }
-    return this.http.get(baseUrl, options).map(resp => resp as Array<Product>);
+    return this.http.get(baseUrl + 'products', options).map(resp => resp as Array<Product>);
+  }
+
+  getAllBrands(): Observable<string[]> {
+    return this.http.get(baseUrl + 'brands')
+      .map(resp => resp as string[]);
+  }
+
+  getAllCategories(): Observable<string[]> {
+    return this.http.get(baseUrl + 'categories')
+      .map(resp => resp as string[]);
   }
 }
