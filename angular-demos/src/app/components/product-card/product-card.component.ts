@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/models/product';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -17,18 +18,21 @@ export class ProductCardComponent implements OnInit {
   quantity: number = 1;
   inCart: boolean = false;
 
-  constructor() { }
+  constructor(private cs: CartService) { }
 
   ngOnInit() { }
 
   addToCart() {
     this.inCart = true;
+    this.cs.addToCart(this.product, this.quantity);
   }
   incrementQuantity() {
     this.quantity++;
+    this.cs.addToCart(this.product, this.quantity);
   }
   decrementQuantity() {
     this.quantity--;
+    this.cs.addToCart(this.product, this.quantity);
     if (this.quantity === 0) {
       this.inCart = false;
       this.quantity = 1;
