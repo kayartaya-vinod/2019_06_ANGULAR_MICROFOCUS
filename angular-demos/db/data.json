@@ -9,7 +9,7 @@
       "quantity_per_unit": "1 KG, approx. 10 to 12 nos",
       "unit_price": 45,
       "picture": "http://kvinod.com/images/products/10000148_13-fresho-onion-medium.jpg",
-      "discount": 22
+      "discount": 0
     },
     {
       "id": 2,
@@ -174,7 +174,7 @@
       "quantity_per_unit": "1 Pc, approx. 700 to 800 GM",
       "unit_price": 20,
       "picture": "http://kvinod.com/images/products/10000066_21-fresho-cabbage-small-grade-a.jpg",
-      "discount": 18
+      "discount": 0
     },
     {
       "id": 17,

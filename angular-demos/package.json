@@ -27,6 +27,7 @@
     "ngx-twitter-timeline": "^0.1.5",
     "popper.js": "^1.15.0",
     "rxjs": "~6.3.3",
+    "rxjs-compat": "^6.5.2",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },

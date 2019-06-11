@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/models/product';
 
 @Component({
@@ -8,22 +8,13 @@ import { Product } from 'src/app/models/product';
 })
 export class ProductCardComponent implements OnInit {
 
+  // this is to say that this component receives data from parent component's html
+  // for example: <app-product-card [product]="p"></app-product-card> 
+  // in product-list.component.html
+  @Input()
   product: Product;
 
   constructor() { }
 
-  ngOnInit() {
-    this.product = {
-      "id": 16,
-      "category": "vegitable",
-      "name": "Cabbage",
-      "brand": "Malnad",
-      "description": "Cabbage small - Grade A",
-      "quantity_per_unit": "1 Pc, approx. 700 to 800 GM",
-      "unit_price": 20,
-      "picture": "http://kvinod.com/images/products/10000066_21-fresho-cabbage-small-grade-a.jpg",
-      "discount": 18
-    };
-  }
-
+  ngOnInit() { }
 }

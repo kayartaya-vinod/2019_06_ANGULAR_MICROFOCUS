@@ -1,10 +1,33 @@
-<div class="card" style="width: 300px">
-
+<div class="card">
   <img [src]="product.picture" [alt]="product.name" class="card-img-top">
-
   <div class="card-body">
-    <h5 class="card-title">{{ product.description }}</h5>
+    <h5 class="card-title">{{ product.description | uppercase }}</h5>
     <p>{{ product.quantity_per_unit}}</p>
-    <p [innerHTML]="product.unit_price"></p>
+    <p *ngIf="product.discount && product.discount>0">
+      <span style="text-decoration: line-through; font-size: 0.8em">
+        {{ product.unit_price | currency: 'INR' }}
+      </span>
+      &nbsp;
+      <span style="font-weight: bolder; ">
+        {{ product | discountedPrice | currency: 'INR'}}
+        ({{ product.discount }}% OFF)
+      </span>
+    </p>
+
+    <p *ngIf="!product.discount || product.discount === 0">
+      <span style="font-weight: bolder; ">
+        {{ product.unit_price | currency: 'INR'}}
+      </span>
+    </p>
+
+    <div class="row">
+      <div class="col-sm-8">
+        <input type="number" class="form-control" value="1">
+      </div>
+      <div class="col-sm-4">
+        <button class="btn btn-primary">Add</button>
+      </div>
+    </div>
+
   </div>
 </div>
