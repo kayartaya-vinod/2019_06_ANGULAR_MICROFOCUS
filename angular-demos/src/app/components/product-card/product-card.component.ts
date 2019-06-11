@@ -14,7 +14,24 @@ export class ProductCardComponent implements OnInit {
   @Input()
   product: Product;
 
+  quantity: number = 1;
+  inCart: boolean = false;
+
   constructor() { }
 
   ngOnInit() { }
+
+  addToCart() {
+    this.inCart = true;
+  }
+  incrementQuantity() {
+    this.quantity++;
+  }
+  decrementQuantity() {
+    this.quantity--;
+    if (this.quantity === 0) {
+      this.inCart = false;
+      this.quantity = 1;
+    }
+  }
 }

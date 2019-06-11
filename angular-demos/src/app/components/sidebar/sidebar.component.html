@@ -1,3 +1,16 @@
-<p>
-  sidebar works!
-</p>
+<p>View all products</p>
+
+<h3>By brand</h3>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let brand of brands | async">
+    {{ brand }}
+  </li>
+</ul>
+
+
+<h3>By category</h3>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let category of categories | async">
+    {{ category }}
+  </li>
+</ul>

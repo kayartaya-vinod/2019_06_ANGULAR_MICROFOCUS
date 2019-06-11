@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [ngClass]="inCart ? 'in-cart': null ">
   <img [src]="product.picture" [alt]="product.name" class="card-img-top">
   <div class="card-body">
     <h5 class="card-title">{{ product.description | uppercase }}</h5>
@@ -20,13 +20,21 @@
       </span>
     </p>
 
-    <div class="row">
+    <div class="row" *ngIf="!inCart">
       <div class="col-sm-8">
         <input type="number" class="form-control" value="1">
       </div>
       <div class="col-sm-4">
-        <button class="btn btn-primary">Add</button>
+        <button class="btn btn-primary" (click)="addToCart()">Add</button>
       </div>
+    </div>
+
+    <div class="text-center" *ngIf="inCart">
+      <button class="btn btn-primary" (click)="decrementQuantity()"> - </button>
+      &nbsp;
+      {{ quantity }} in cart
+      &nbsp;
+      <button class="btn btn-primary" (click)="incrementQuantity()"> + </button>
     </div>
 
   </div>
