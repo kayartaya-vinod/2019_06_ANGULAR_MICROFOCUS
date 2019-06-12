@@ -20,7 +20,12 @@ export class ProductCardComponent implements OnInit {
 
   constructor(private cs: CartService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    if(this.cs.isProductInCart(this.product.id)) {
+      this.inCart = true;
+      this.quantity = this.cs.getQuantityForProduct(this.product.id);
+    }
+  }
 
   addToCart() {
     this.inCart = true;

@@ -3,7 +3,9 @@
 <h3>By brand</h3>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let brand of brands | async">
-    {{ brand }}
+    <a href="" [routerLink]="['/products/by/brand', brand]">
+      {{ brand }}
+    </a>
   </li>
 </ul>
 
@@ -11,6 +13,8 @@
 <h3>By category</h3>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let category of categories | async">
-    {{ category }}
+    <a href="" [routerLink]="['/products', 'by', 'category', category]">
+      {{ category }}
+    </a>
   </li>
 </ul>

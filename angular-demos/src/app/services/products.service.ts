@@ -33,4 +33,17 @@ export class ProductsService {
     return this.http.get(baseUrl + 'categories')
       .map(resp => resp as string[]);
   }
+
+  getProductsBy(by_what: string, by_val: string, pageNum = 1, pageSize = 9): Observable<Product[]> {
+    // http://localhost:3000/products/?category=fruit
+    const options = {
+      params: {
+        [by_what]: by_val,
+        _page: pageNum+'',
+        _limit: pageSize+''
+      }
+    };
+    return this.http.get(baseUrl + 'products', options)
+      .map(resp => resp as Product[]);
+  }
 }

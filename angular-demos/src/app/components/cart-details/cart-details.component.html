@@ -1,0 +1,31 @@
+<h3>Your cart contains...</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Sl no</th>
+      <th>Product description</th>
+      <th>Qantity per unit</th>
+      <th>Unit price</th>
+      <th>Quantity</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cart; index as slno;">
+      <td>{{ slno+1 }}</td>
+      <td>
+        <img [src]="item.product.picture" class="thumbnail">
+        {{ item.product.description }}</td>
+      <td>{{ item.product.quantity_per_unit }}</td>
+      <td>{{ item.product | discountedPrice | currency: 'INR' }}</td>
+      <td>
+        <button class="btn" (click)="decrementQuantity(item)"> - </button>
+        {{ item.quantity }}
+        <button class="btn" (click)="incrementQuantity(item)"> + </button>
+      
+      </td>
+      <td>{{ (item.product | discountedPrice) * item.quantity | currency: 'INR' }}</td>
+    </tr>
+  </tbody>
+</table>
