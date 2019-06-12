@@ -1,0 +1,34 @@
+<div class="alert alert-info">
+  <div class="container">
+    <h1>Nested routes demo</h1>
+    <hr>
+    <p>Powered by Angular 7</p>
+  </div>
+</div>
+
+<!-- .container>.row>.col-sm-4+.col-sm-8 -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <!-- sidebar menu options here -->
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a href="" [routerLink]="['/']">Home</a>
+        </li>
+        <li class="list-group-item">
+          <a href="" [routerLink]="['/java']">Java tutorials</a>
+        </li>
+        <li class="list-group-item">
+          <a href="" [routerLink]="['/angular']">Angular tutorials</a>
+        </li>
+        <li class="list-group-item">
+          <a href="" [routerLink]="['/nodejs']">Node.js tutorial</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-8">
+      <!-- router-outlet here -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
