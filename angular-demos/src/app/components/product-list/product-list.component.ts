@@ -19,19 +19,28 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
 
     // get the route parameters
-    // this.activatedRoute.params() --> asynchronous via obserable
+    // this.activatedRoute.params --> asynchronous via obserable
     // this.activatedRoute.snapshot.params() --> syncrhonous
-    const params = this.activatedRoute.snapshot.params;
-    console.log('params is', params);
+    // const params = this.activatedRoute.snapshot.params;
+    // if (params['by_what']) {
+    //   // by_what may be 'brand' or 'category'
+    //   const { by_what, by_val } = params;
+    //   this.products = this.ps.getProductsBy(by_what, by_val);
+    // }
+    // else {
+    //   this.products = this.ps.getProducts();
+    // }
 
-    if (params['by_what']) {
-      // by_what may be 'brand' or 'category'
-      const { by_what, by_val } = params;
-      this.products = this.ps.getProductsBy(by_what, by_val);
-    }
-    else {
-      this.products = this.ps.getProducts();
-    }
+    // use activatedRoute.params instead of activatedRoute.snapshot.params
+    // if you want to do something on change of the route parameters
+    this.activatedRoute.params.subscribe(({ by_what, by_val }) => {
+      if (by_what) {
+        this.products = this.ps.getProductsBy(by_what, by_val);
+      }
+      else {
+        this.products = this.ps.getProducts();
+      }
+    });
 
   }
 }

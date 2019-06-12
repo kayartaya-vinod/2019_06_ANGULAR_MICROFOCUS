@@ -944,5 +944,94 @@
     "Fresho",
     "Malnad",
     "Zespri"
+  ],
+  "orders": [
+    {
+      "customer": {
+        "address": {
+          "city": "Bangalore",
+          "state": "Karantaka",
+          "house_no_street": "TF-1 Elegant Elite 1st cross 1st main",
+          "area": "ISRO layout"
+        },
+        "name": "Vinod",
+        "email": "vinod@vinod.co",
+        "phone": "9731424784"
+      },
+      "order_date": "2019-06-12T07:20:59.351Z",
+      "order_details": [
+        {
+          "product": {
+            "id": 1,
+            "category": "vegitable",
+            "name": "Onion",
+            "brand": "Fresho",
+            "description": "Onion - Medium",
+            "quantity_per_unit": "1 KG, approx. 10 to 12 nos",
+            "unit_price": 45,
+            "picture": "http://kvinod.com/images/products/10000148_13-fresho-onion-medium.jpg",
+            "discount": 0
+          },
+          "quantity": 4
+        },
+        {
+          "product": {
+            "id": 4,
+            "category": "vegitable",
+            "name": "Ladies finger",
+            "brand": "Fresho",
+            "description": "Ladies Finger",
+            "quantity_per_unit": "250 GM",
+            "unit_price": 18,
+            "picture": "http://kvinod.com/images/products/10000143_13-fresho-ladies-finger.jpg",
+            "discount": 24
+          },
+          "quantity": 6
+        },
+        {
+          "product": {
+            "id": 7,
+            "category": "fruit",
+            "name": "Banana",
+            "brand": "Malnad",
+            "description": "Banana Yelakki",
+            "quantity_per_unit": "500 GM, approx 8 to 9 nos",
+            "unit_price": 29,
+            "picture": "http://kvinod.com/images/products/10000033_19-fresho-banana-yelakki.jpg",
+            "discount": 18
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": 8,
+            "category": "fruit",
+            "name": "Pomegranate",
+            "brand": "Fresho",
+            "description": "Pomegranate - Kesar",
+            "quantity_per_unit": "1 KG, approx. 4 to 5 nos",
+            "unit_price": 141,
+            "picture": "http://kvinod.com/images/products/10000269_12-fresho-pomegranate-kesar.jpg",
+            "discount": 1
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": 2,
+            "category": "vegitable",
+            "name": "Potato",
+            "brand": "Fresho",
+            "description": "Potato",
+            "quantity_per_unit": "1 KG, approx. 9 to 10 nos",
+            "unit_price": 25,
+            "picture": "http://kvinod.com/images/products/10000159_14-fresho-potato.jpg",
+            "discount": 2
+          },
+          "quantity": 1
+        }
+      ],
+      "id": 1
+    }
   ]
 }

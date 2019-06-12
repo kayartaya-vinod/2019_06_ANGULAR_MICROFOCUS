@@ -14,7 +14,6 @@ export class CartService {
   constructor() {
     if (window.localStorage['cart']) {
       this.cart = JSON.parse(window.localStorage.getItem('cart'));
-      this.eventEmitter.emit('cart-updated');
     }
   }
 

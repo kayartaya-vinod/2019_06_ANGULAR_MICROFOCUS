@@ -15,6 +15,7 @@ import { DiscountedPricePipe } from './pipes/discounted-price.pipe';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { routesConfig } from './routesConfig';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { routesConfig } from './routesConfig';
     ProductListComponent,
     DiscountedPricePipe,
     SidebarComponent,
-    CartDetailsComponent
+    CartDetailsComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,

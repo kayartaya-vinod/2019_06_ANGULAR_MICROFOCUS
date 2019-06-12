@@ -1,0 +1,58 @@
+<h3>Please enter contact and address details for delivery</h3>
+
+<form class="form-horizontal">
+  <div class="form-group row">
+    <label class="col-sm-4" for="name">Name</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="customer.name">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-4" for="email">Email address</label>
+    <div class="col-sm-6">
+      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="customer.email">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-4" for="phone">Phone number</label>
+    <div class="col-sm-6">
+      <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="customer.phone">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-4" for="name">Hose no/street</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="house_no_street" name="house_no_street"
+        [(ngModel)]="customer.address.house_no_street">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-4" for="name">Area/locality</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="area" name="area" [(ngModel)]="customer.address.area">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-4" for="name">City</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="city" name="city" [(ngModel)]="customer.address.city">
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label class="col-sm-4" for="name">State</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="state" name="state"
+        [(ngModel)]="customer.address.state">
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+</form>
+
+<p>{{ customer | json }}</p>
