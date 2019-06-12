@@ -1032,6 +1032,34 @@
         }
       ],
       "id": 1
+    },
+    {
+      "customer": {
+        "address": {
+          "city": "Bangalore",
+          "state": "Karantaka"
+        },
+        "name": "vinod",
+        "email": "vinod@vinod.co"
+      },
+      "order_date": "2019-06-12T09:36:46.864Z",
+      "order_details": [
+        {
+          "product": {
+            "id": 2,
+            "category": "vegitable",
+            "name": "Potato",
+            "brand": "Fresho",
+            "description": "Potato",
+            "quantity_per_unit": "1 KG, approx. 9 to 10 nos",
+            "unit_price": 25,
+            "picture": "http://kvinod.com/images/products/10000159_14-fresho-potato.jpg",
+            "discount": 2
+          },
+          "quantity": 1
+        }
+      ],
+      "id": 2
     }
   ]
 }

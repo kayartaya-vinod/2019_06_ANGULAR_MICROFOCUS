@@ -15,19 +15,32 @@ export class CartDetailsComponent implements OnInit {
   constructor(private cs: CartService, private router: Router) { }
 
   ngOnInit() {
-    this.cart = [...this.cs.cart];
+    this.cart = [...this.cs.cart]; // shallow copy; do not mutate model
   }
 
   decrementQuantity(item: LineItem) {
     item.quantity--;
     this.cs.addToCart(item.product, item.quantity);
+    if (item.quantity === 0) {
+      const index = this.cart.findIndex(itm => itm === item);
+      if (index !== -1) {
+        this.cart.splice(index, 1);
+      }
+    }
   }
   incrementQuantity(item: LineItem) {
     item.quantity++;
     this.cs.addToCart(item.product, item.quantity);
   }
 
-  proceedToCheckout() {
+  emptyCart(){
+    if(window.confirm('Are you sure? This cannot be reversed!')) {
+      this.cs.emptyCart();
+      this.cart = [];
+    }
+  }
+
+  proceedToCheckout(): void {
     // programatically navigate to a different URL
     this.router.navigate(['/checkout']);
   }

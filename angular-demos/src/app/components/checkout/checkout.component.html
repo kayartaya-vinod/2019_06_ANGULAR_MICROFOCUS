@@ -1,17 +1,30 @@
 <h3>Please enter contact and address details for delivery</h3>
 
-<form class="form-horizontal">
+<form class="form-horizontal" #f1="ngForm">
   <div class="form-group row">
     <label class="col-sm-4" for="name">Name</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="customer.name">
+      <input type="text" class="form-control" required minlength="3" id="name" name="name" #tfName="ngModel"
+        [(ngModel)]="customer.name">
+
+      <div class="err" *ngIf="tfName.dirty && tfName.invalid">
+        <div *ngIf="tfName.errors.required">Name is mandatory</div>
+        <div *ngIf="tfName.errors.minlength">Name must be at least 3 letters</div>
+      </div>
     </div>
   </div>
 
   <div class="form-group row">
     <label class="col-sm-4" for="email">Email address</label>
     <div class="col-sm-6">
-      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="customer.email">
+      <input type="email" class="form-control" 
+        required pattern="^(.+)@(.+){2,}\.(.+){2,}$" #tfEmail="ngModel" id="email"
+        name="email" [(ngModel)]="customer.email">
+
+      <div class="err" *ngIf="tfEmail.dirty && tfEmail.invalid">
+        <div *ngIf="tfEmail.errors.required">Email address is mandatory</div>
+        <div *ngIf="tfEmail.errors.pattern">Looks like you entered an invalid email pattern</div>
+      </div>
     </div>
   </div>
 
@@ -23,7 +36,7 @@
   </div>
 
   <div class="form-group row">
-    <label class="col-sm-4" for="name">Hose no/street</label>
+    <label class="col-sm-4" for="house_no_street">Hose no/street</label>
     <div class="col-sm-6">
       <input type="text" class="form-control" id="house_no_street" name="house_no_street"
         [(ngModel)]="customer.address.house_no_street">
@@ -31,28 +44,25 @@
   </div>
 
   <div class="form-group row">
-    <label class="col-sm-4" for="name">Area/locality</label>
+    <label class="col-sm-4" for="area">Area/locality</label>
     <div class="col-sm-6">
       <input type="text" class="form-control" id="area" name="area" [(ngModel)]="customer.address.area">
     </div>
   </div>
 
   <div class="form-group row">
-    <label class="col-sm-4" for="name">City</label>
+    <label class="col-sm-4" for="city">City</label>
     <div class="col-sm-6">
       <input type="text" class="form-control" id="city" name="city" [(ngModel)]="customer.address.city">
     </div>
   </div>
 
-
   <div class="form-group row">
-    <label class="col-sm-4" for="name">State</label>
+    <label class="col-sm-4" for="state">State</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" id="state" name="state"
-        [(ngModel)]="customer.address.state">
+      <input type="text" class="form-control" id="state" name="state" [(ngModel)]="customer.address.state">
     </div>
   </div>
-  <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+  <button class="btn" [ngClass]="{'btn-primary': f1.valid, 'btn-secondary': f1.invalid}" [disabled]="f1.invalid"
+    (click)="checkout(f1)">Checkout</button>
 </form>
-
-<p>{{ customer | json }}</p>

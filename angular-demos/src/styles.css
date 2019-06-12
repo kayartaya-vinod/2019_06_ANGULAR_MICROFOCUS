@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.btn {
+    margin-right: 10px;
+}
+.err {
+    color: red;
+    font-size: 0.8em;
+}

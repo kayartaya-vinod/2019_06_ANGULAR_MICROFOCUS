@@ -17,6 +17,11 @@ export class CartService {
     }
   }
 
+  emptyCart() {
+    this.cart = [];
+    this.eventEmitter.emit('cart-updated');
+  }
+
   isProductInCart(id: number): boolean {
     return this.cart.findIndex(itm => itm.product.id === id) !== -1;
   }
