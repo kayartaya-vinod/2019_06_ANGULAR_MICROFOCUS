@@ -1,3 +1,23 @@
-<h1><a href="" [routerLink]="['/products']">My Basket</a></h1>
-<h3><a href="" [routerLink]="['/cart-details']">{{ itemCount }} items in your cart ({{ cartValue | currency: 'INR' }})</a></h3>
-<hr>
+<!-- https://cdn.appstorm.net/android.appstorm.net/files/2012/12/letitshop-logo.png -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
+        <a class="navbar-brand" href="" [routerLink]="['/products']">
+            <h1>
+
+                <img style="height: 50px;"
+                src="https://cdn.appstorm.net/android.appstorm.net/files/2012/12/letitshop-logo.png" alt="">
+                My Basket
+            </h1>
+        </a>
+        <ul class="navbar-nav text-right" *ngIf="itemCount>0">
+            <li class="nav-item">
+                <a class="nav-link active" href="" [routerLink]="['/cart-details']">
+                    {{ itemCount }} items in your cart ({{ cartValue | currency: 'INR' }})
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br><br>

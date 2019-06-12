@@ -23,7 +23,7 @@
         <button class="btn" (click)="decrementQuantity(item)"> - </button>
         {{ item.quantity }}
         <button class="btn" (click)="incrementQuantity(item)"> + </button>
-      
+
       </td>
       <td>{{ (item.product | discountedPrice) * item.quantity | currency: 'INR' }}</td>
     </tr>

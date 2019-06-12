@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from 'src/app/models/customer';
-import { Order } from 'src/app/models/order';
-import { CartService } from 'src/app/services/cart.service';
-import { OrdersService } from 'src/app/services/orders.service';
+import { Customer } from '@models/customer';
+import { Order } from '@models/order';
+import { CartService } from '@services/cart.service';
+import { OrdersService } from '@services/orders.service';
 
 @Component({
   selector: 'app-checkout',
