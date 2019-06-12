@@ -1060,6 +1060,65 @@
         }
       ],
       "id": 2
+    },
+    {
+      "customer": {
+        "address": {
+          "city": "Bangalore",
+          "state": "Karantaka",
+          "house_no_street": "TF-1 Elegant Elite 1st crs 1st mn",
+          "area": "ISRO lyt"
+        },
+        "name": "Vinod",
+        "email": "vinod@vinod.co",
+        "phone": "9731424784"
+      },
+      "order_date": "2019-06-12T09:40:47.424Z",
+      "order_details": [
+        {
+          "product": {
+            "id": 2,
+            "category": "vegitable",
+            "name": "Potato",
+            "brand": "Fresho",
+            "description": "Potato",
+            "quantity_per_unit": "1 KG, approx. 9 to 10 nos",
+            "unit_price": 25,
+            "picture": "http://kvinod.com/images/products/10000159_14-fresho-potato.jpg",
+            "discount": 2
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": 1,
+            "category": "vegitable",
+            "name": "Onion",
+            "brand": "Fresho",
+            "description": "Onion - Medium",
+            "quantity_per_unit": "1 KG, approx. 10 to 12 nos",
+            "unit_price": 45,
+            "picture": "http://kvinod.com/images/products/10000148_13-fresho-onion-medium.jpg",
+            "discount": 0
+          },
+          "quantity": 3
+        },
+        {
+          "product": {
+            "id": 3,
+            "category": "vegitable",
+            "name": "Tomato",
+            "brand": "Malnad",
+            "description": "Hybrid tomato",
+            "quantity_per_unit": "500 GM, approx. 6 to 7 nos",
+            "unit_price": 28,
+            "picture": "http://kvinod.com/images/products/10000201_12-fresho-tomato-hybrid.jpg",
+            "discount": 12
+          },
+          "quantity": 5
+        }
+      ],
+      "id": 3
     }
   ]
 }

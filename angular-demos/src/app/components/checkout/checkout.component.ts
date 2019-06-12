@@ -27,7 +27,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   checkout(frm) {
-    debugger;
     const order = new Order();
     order.customer = { ...this.customer }; // shallow copy; don't mutate customer.
     order.order_date = new Date();
@@ -35,7 +34,6 @@ export class CheckoutComponent implements OnInit {
 
     this.os.placeOrder(order)
       .subscribe(ord => {
-        window.alert('Order placed successfully!');
         this.cs.emptyCart();
         // TODO: navigate to the order-summary page
         window.alert('Order placed with order id: ' + ord.id);
