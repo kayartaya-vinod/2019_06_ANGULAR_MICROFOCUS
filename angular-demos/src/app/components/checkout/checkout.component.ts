@@ -26,7 +26,7 @@ export class CheckoutComponent implements OnInit {
     this.customer = new Customer();
   }
 
-  checkout(frm) {
+  checkout() {
     const order = new Order();
     order.customer = { ...this.customer }; // shallow copy; don't mutate customer.
     order.order_date = new Date();
