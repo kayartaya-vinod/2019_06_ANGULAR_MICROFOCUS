@@ -9,7 +9,8 @@ import { Angular7Component } from '@components/nested-routes-demo/angular/angula
 import { AngularjsComponent } from '@components/nested-routes-demo/angular/angularjs/angularjs.component';
 import { BoxDirective } from '@directives/box.directive';
 import { DirectiveDemoComponent } from './components/nested-routes-demo/directive-demo/directive-demo.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmployeeFormComponent } from './components/nested-routes-demo/employee-form/employee-form.component';
 
 const routesConfig: Routes = [
     {
@@ -47,6 +48,10 @@ const routesConfig: Routes = [
     {
         path: 'directives-demo',
         component: DirectiveDemoComponent
+    },
+    {
+        path: 'employee-form',
+        component: EmployeeFormComponent
     }
 ];
 
@@ -59,11 +64,13 @@ const routesConfig: Routes = [
         Angular7Component,
         AngularjsComponent,
         BoxDirective,
-        DirectiveDemoComponent
+        DirectiveDemoComponent,
+        EmployeeFormComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot(routesConfig, { useHash: true })
     ],
     bootstrap: [

@@ -1,0 +1,38 @@
+<h3>Employee details</h3>
+
+<form class="form-horizontal" [formGroup]="empForm" style="width: 400px;">
+  <div class="form-group row">
+    <label class="col" for="id">Id</label>
+    <div class="col">
+      <input id="id" type="text" class="form-control" formControlName="id">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col" for="name">Name</label>
+    <div class="col">
+      <input id="name" type="text" class="form-control" formControlName="name">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col" for="salary">Salary</label>
+    <div class="col">
+      <input id="salary" type="number" class="form-control" formControlName="salary">
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label class="col" for="salary">Skills
+      <button class="btn btn-link" (click)="addSkill()">Add skill</button></label>
+    <div class="col" formArrayName="skills">
+      <div *ngFor="let sk of empForm.get('skills')['controls']; index as i">
+        <input type="text" class="form-control" [formControlName]="i">
+      </div>
+    </div>
+  </div>
+
+  <button class="btn" [ngClass]="{ 'btn-primary': empForm.valid, 'btn-danger': empForm.invalid}"
+    [disabled]="empForm.invalid" (click)="save()">Save details</button>
+</form>
