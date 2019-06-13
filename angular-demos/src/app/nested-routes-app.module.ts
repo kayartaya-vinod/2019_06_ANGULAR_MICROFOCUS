@@ -9,6 +9,7 @@ import { Angular7Component } from '@components/nested-routes-demo/angular/angula
 import { AngularjsComponent } from '@components/nested-routes-demo/angular/angularjs/angularjs.component';
 import { BoxDirective } from '@directives/box.directive';
 import { DirectiveDemoComponent } from './components/nested-routes-demo/directive-demo/directive-demo.component';
+import { FormsModule } from '@angular/forms';
 
 const routesConfig: Routes = [
     {
@@ -62,6 +63,7 @@ const routesConfig: Routes = [
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         RouterModule.forRoot(routesConfig, { useHash: true })
     ],
     bootstrap: [

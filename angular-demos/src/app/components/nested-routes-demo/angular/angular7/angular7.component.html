@@ -1,3 +1,16 @@
-<p>
-  angular7 works!
-</p>
+<div class="container">
+
+  <div>
+    <label for="name">Enter a name: </label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name">
+    <button class="btn btn-primary" (click)="addName()">Add name</button>
+  </div>
+
+  <h3>Here are the names: </h3>
+  <ul>
+    <li *ngFor="let n of nameList; index as i" >{{ n }}
+      <button class="btn text-danger" (click)="deleteName(i)"> x </button>
+    </li>
+  </ul>
+
+</div>

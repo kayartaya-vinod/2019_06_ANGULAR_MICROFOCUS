@@ -1,7 +1,10 @@
 <h3 class="alert alert-warning">Welcome to Angular tutorials</h3>
+<p>{{ message }}</p>
+<!-- <button class="btn btn-link" [routerLink]="['angular7']">Angular 7</button> |
+<button class="btn btn-link" [routerLink]="['angularjs']">Angular JS 1.x (legacy)</button> -->
 
-<button class="btn btn-link" [routerLink]="['angular7']">Angular 7</button> |
-<button class="btn btn-link" [routerLink]="['angularjs']">Angular JS 1.x (legacy)</button>
 
+<!-- <router-outlet></router-outlet> -->
 
-<router-outlet></router-outlet>
+<app-angular7 (nameAdded)="nameAddedToNameList($event)"
+    (nameDeleted)="nameRemovedFromNameList($event)"></app-angular7>

@@ -1,9 +1,14 @@
 <h3>Custom directives demo</h3>
 <hr>
 
+<div appBox borderStyle="dashed"></div>
+<div appBox borderColor="red"></div>
+<div appBox borderColor="blue" borderThickness="5"></div>
 <div appBox></div>
-<div appBox></div>
-<div appBox></div>
-<div appBox></div>
-<div appBox></div>
+<br>
+<div appBox [boxHeight]="boxHeight">
+    <button class="btn" (click)="increment()">Incremnet</button>
+    <button class="btn" (click)="decrement()">Decremnet</button>
+    <p>{{ boxHeight }}</p>
+</div>
 
