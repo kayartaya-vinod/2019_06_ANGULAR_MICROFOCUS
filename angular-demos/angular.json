@@ -20,13 +20,19 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/ng1-app-resources/"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/ng1-app-resources/assets/js/jquery/jquery-3.4.1.js",
+              "src/ng1-app-resources/assets/js/angularjs/angular.js",
+              "src/ng1-app-resources/assets/js/angularjs/angular-route.js",
+              "src/ng1-app-resources/app/main.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

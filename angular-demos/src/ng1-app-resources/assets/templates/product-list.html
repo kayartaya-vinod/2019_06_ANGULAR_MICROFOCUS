@@ -1,0 +1,25 @@
+<h3>{{ title }}</h3>
+<div>
+    <table class="table table-bordered ">
+        <thead>
+            <tr>
+                <th>Sl no</th>
+                <th>Product description</th>
+                <th>Quantity per unit</th>
+                <th>Unit price</th>
+                <th>Discount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="p in products">
+                <td>{{ $index+1 }}</td>
+                <td>
+                    <img ng-src="{{ p.picture }}" style="height: 50px" class="img">
+                    {{ p.description }}</td>
+                <td>{{ p.quantity_per_unit }}</td>
+                <td>{{ p.unit_price }}</td>
+                <td>{{ p.discount }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

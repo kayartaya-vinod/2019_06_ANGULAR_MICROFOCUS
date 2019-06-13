@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from '@components/nested-routes-demo/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
+import { UpgradeModule } from '@angular/upgrade/static';
+
 import { JavaComponent } from '@components/nested-routes-demo/java/java.component';
 import { AngularComponent } from '@components/nested-routes-demo/angular/angular.component';
 import { NodeComponent } from '@components/nested-routes-demo/node/node.component';
@@ -11,6 +13,7 @@ import { BoxDirective } from '@directives/box.directive';
 import { DirectiveDemoComponent } from './components/nested-routes-demo/directive-demo/directive-demo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeFormComponent } from './components/nested-routes-demo/employee-form/employee-form.component';
+import { Ng1AppComponent } from './components/nested-routes-demo/ng1-app/ng1-app.component';
 
 const routesConfig: Routes = [
     {
@@ -52,6 +55,10 @@ const routesConfig: Routes = [
     {
         path: 'employee-form',
         component: EmployeeFormComponent
+    },
+    {
+        path: 'ng1-app',
+        component: Ng1AppComponent
     }
 ];
 
@@ -65,12 +72,14 @@ const routesConfig: Routes = [
         AngularjsComponent,
         BoxDirective,
         DirectiveDemoComponent,
-        EmployeeFormComponent
+        EmployeeFormComponent,
+        Ng1AppComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
+        UpgradeModule,
         RouterModule.forRoot(routesConfig, { useHash: true })
     ],
     bootstrap: [
