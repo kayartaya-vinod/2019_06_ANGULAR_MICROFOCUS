@@ -7,6 +7,8 @@ import { AngularComponent } from '@components/nested-routes-demo/angular/angular
 import { NodeComponent } from '@components/nested-routes-demo/node/node.component';
 import { Angular7Component } from '@components/nested-routes-demo/angular/angular7/angular7.component';
 import { AngularjsComponent } from '@components/nested-routes-demo/angular/angularjs/angularjs.component';
+import { BoxDirective } from '@directives/box.directive';
+import { DirectiveDemoComponent } from './components/nested-routes-demo/directive-demo/directive-demo.component';
 
 const routesConfig: Routes = [
     {
@@ -40,6 +42,10 @@ const routesConfig: Routes = [
     {
         path: 'nodejs',
         component: NodeComponent
+    },
+    {
+        path: 'directives-demo',
+        component: DirectiveDemoComponent
     }
 ];
 
@@ -50,7 +56,9 @@ const routesConfig: Routes = [
         AngularComponent,
         NodeComponent,
         Angular7Component,
-        AngularjsComponent
+        AngularjsComponent,
+        BoxDirective,
+        DirectiveDemoComponent
     ],
     imports: [
         BrowserModule,
