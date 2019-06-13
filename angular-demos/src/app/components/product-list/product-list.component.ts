@@ -4,6 +4,9 @@ import { Product } from '@models/product';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
+import * as $ from 'jquery';
+window['$'] = $;
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -11,36 +14,38 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductListComponent implements OnInit {
 
-  products: Observable<Product[]>;
+  products: Product[] = [];
+  pageNum: number = 1;
 
   constructor(private ps: ProductsService,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    const w = $(window);
+    const d = $(document);
+    const self = this;
+    // register an event handler for the window's scroll event
+    window.onscroll = function () {
+      const windowHeight = w.height();
+      const windowTopPosition = w.scrollTop();
+      const documentHeight = d.height();
+      if ((windowHeight + windowTopPosition) >= (documentHeight - 50)) {
+        self.loadData();
+      }
+    }
+    this.loadData();
+  }
 
-    // get the route parameters
-    // this.activatedRoute.params --> asynchronous via obserable
-    // this.activatedRoute.snapshot.params() --> syncrhonous
-    // const params = this.activatedRoute.snapshot.params;
-    // if (params['by_what']) {
-    //   // by_what may be 'brand' or 'category'
-    //   const { by_what, by_val } = params;
-    //   this.products = this.ps.getProductsBy(by_what, by_val);
-    // }
-    // else {
-    //   this.products = this.ps.getProducts();
-    // }
-
-    // use activatedRoute.params instead of activatedRoute.snapshot.params
-    // if you want to do something on change of the route parameters
+  loadData() {
     this.activatedRoute.params.subscribe(({ by_what, by_val }) => {
       if (by_what) {
-        this.products = this.ps.getProductsBy(by_what, by_val);
+        this.ps.getProductsBy(by_what, by_val)
+          .subscribe(data => this.products = data);
       }
       else {
-        this.products = this.ps.getProducts();
+        this.ps.getProducts(this.pageNum++)
+          .subscribe(data => this.products.push(...data));
       }
     });
-
   }
 }

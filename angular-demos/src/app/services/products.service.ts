@@ -39,8 +39,8 @@ export class ProductsService {
     const options = {
       params: {
         [by_what]: by_val,
-        _page: pageNum+'',
-        _limit: pageSize+''
+        // _page: pageNum+'',
+        // _limit: pageSize+''
       }
     };
     return this.http.get(baseUrl + 'products', options)
